@@ -1,5 +1,5 @@
 const express = require("express");
-const require = require("zod");
+const zod= require("zod");
 const { User } = require("../db");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = require("../config");
@@ -12,7 +12,7 @@ const signupSchema = zod.object({
     firstName: zod.string(),
     password: zod.string()
 })
-router.post("/signup", async (req,res)=> {
+router.post("/signup", async(req,res)=> {
     const body = req.body;
     const {success} = signupSchema.safeParse(req.body);
     if(!success){

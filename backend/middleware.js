@@ -1,6 +1,6 @@
 // Import required modules
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = require("../config");
+const JWT_SECRET = require("../backend/config");
 
 const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
